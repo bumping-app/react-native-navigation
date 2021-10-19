@@ -29,6 +29,9 @@
     if (@available(iOS 13.0, *)) {
         self.tabBar.standardAppearance = [UITabBarAppearance new];
     }
+    if (@available(iOS 15.0, *)) {
+       self.tabBar.scrollEdgeAppearance = [UITabBarAppearance new];
+    }
     return self;
 }
 

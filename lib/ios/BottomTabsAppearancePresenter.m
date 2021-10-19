@@ -14,8 +14,12 @@
 
 - (void)setTabBarBackgroundColor:(UIColor *)backgroundColor {
     [self setTabBarOpaqueBackground];
-    for (UIViewController* childViewController in self.tabBarController.childViewControllers)
+    for (UIViewController *childViewController in self.tabBarController.childViewControllers) {
         childViewController.tabBarItem.standardAppearance.backgroundColor = backgroundColor;
+        if (@available(iOS 15.0, *)) {
+            childViewController.tabBarItem.scrollEdgeAppearance.backgroundColor = backgroundColor;
+        }
+    }
 }
 
 - (void)setTabBarTranslucent:(BOOL)translucent {
